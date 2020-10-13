@@ -2,13 +2,15 @@ import React from "react";
 import pet from "@frontendmasters/pet";
 
 class Details extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      loading: true,
-    };
-  }
+  //   this.state = {
+  //     loading: true,
+  //   };
+  // }
+
+  state = { loading: true };
 
   // get id from path="/details/:id"
   componentDidMount() {
