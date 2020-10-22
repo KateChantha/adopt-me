@@ -7,19 +7,31 @@ import React from "react";
 class Carousel extends React.Component {
   state = {
     photos: [],
-    active: 0,
+    active: 0, // by default, seclect 1st photo
   };
 
-  // actept media from parent and keep only large photos
+  // a React method, must be static, that take in a set of props and return a new set of state
+  // accept media props from parent 
   static getDerivedStateFromProps({ media }) {
+    // defaut pet photo
     let photos = ["http://placecorgi.com/600/600"];
 
     if (media.length) {
+      // keep only large photos
       photos = media.map(({ large }) => large);
     }
 
-    // array of photo will be merge to initail state
+    // photos is an array of string URL will be merge to initail state
     return { photos };
+  }
+
+  // property method syntax - use arrow function
+  handleIndexClick = event => {
+    this.setState({
+      // add + sign for coercion string to number
+      // dataset is refered to <img data-index={index} />
+      active: +event.target.dataset.index
+    });
   }
 
   render() {
@@ -30,6 +42,7 @@ class Carousel extends React.Component {
         <img src={photos[active]} alt="animal" />
         <div className="carousel-smaller">
           {photos.map((photo, index) => (
+            /** to ignore rule -accssibility rule in this case */
             // eslint-disable-next-line
             <img
               key={photo}
