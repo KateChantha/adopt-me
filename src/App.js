@@ -8,6 +8,7 @@ import ThemeContext from "./ThemeContext";
 const App = () => {
 
   // store an array[state, setState] hooks called themeHook
+  // initail state with darkblue
   const themeHook = useState("darkblue");
   /** everything inside ThemeContext.Provider will have access to global app state this themeHook */
   return (

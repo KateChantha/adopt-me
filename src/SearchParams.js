@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import pet, { ANIMALS } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
 import Results from "./Results";
+import ThemeContext from "./ThemeContext";
 
 const SearchParams = () => {
   const [location, setLocation] = useState("Seattle, WA");
@@ -10,6 +11,7 @@ const SearchParams = () => {
   // Custom hook - useDropdown() will return [state, Dropdown, setState]
   const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
   const [pets, setPets] = useState([]);
+  const [theme] = useContext(ThemeContext)
 
   // requestPets() is called onSubmitt by <form>
   async function requestPets() {
@@ -59,7 +61,7 @@ const SearchParams = () => {
         <AnimalDropdown />
         <BreedDropdown />
 
-        <button>Submit</button>
+        <button style={{ backgroundColor: theme }} >Submit</button>
       </form>
       <Results pets={pets} />
     </div>
