@@ -5,6 +5,8 @@ import {Link, Redirect} from "@reach/router";
 
 class ErrorBoundary extends React.Component {
   state = { hasError: false, redirect: false};
+
+  // this will run when some error is caugth inside of it
   static getDerivedStateFromError () {
     return { hasError: true };
   }
@@ -15,6 +17,7 @@ class ErrorBoundary extends React.Component {
   }
 
   /** resirect to home page in 5 sec after error */
+  // it will run everytime state change or props change
   componentDidUpdate() {
     if (this.state.hasError) {
       setTimeout(() => this.setState({ redirect: true }), 5000);
