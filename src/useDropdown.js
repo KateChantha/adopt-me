@@ -14,7 +14,7 @@ const useDropdown = (label, defaultState, options) => {
       {label}
       <select
         id={id}
-        // value={state} // not sure why we need value attribute in<select>, thought we get e.target.value out of value of <option>
+        value={state} /** must  */
         onChange={(e) => setState(e.target.value)}
         onBlur={(e) => setState(e.target.value)}
         disabled={!options.length}
