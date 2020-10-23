@@ -11,7 +11,7 @@ const SearchParams = () => {
   // Custom hook - useDropdown() will return [state, Dropdown, setState]
   const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
   const [pets, setPets] = useState([]);
-  const [theme] = useContext(ThemeContext)
+  const [theme, setTheme] = useContext(ThemeContext)
 
   // requestPets() is called onSubmitt by <form>
   async function requestPets() {
@@ -60,6 +60,20 @@ const SearchParams = () => {
 
         <AnimalDropdown />
         <BreedDropdown />
+
+        <label htmlFor="theme" >
+          ThemeContext
+          <select
+            value={theme}
+            onChange={ e => setTheme(e.target.value)}
+            onBlur={ e => setTheme(e.target.value)}
+          >
+            <option value="peru">Peru</option>
+            <option value="darkblue">Dark Blue</option>
+            <option value="mediumorchid">Medium Orchid</option>
+            <option value="chartreuse">Chartreuse</option>
+          </select>
+        </label>
 
         <button style={{ backgroundColor: theme }} >Submit</button>
       </form>
