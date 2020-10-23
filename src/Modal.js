@@ -22,7 +22,7 @@ const Modal = ({ children }) => {
     // return componentWillUnMout - clean up function
     // only run this function when Modal get closed
     return () => modalRoot.removeChild(elRef.current);
-  })
+  },[]);
 
   // Using createPotal, this Modal is getting rendered to a differnt part of the DOM
   return createPortal(<div>{children}</div>, elRef.current)
