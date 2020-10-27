@@ -5,6 +5,6 @@ import { createContext } from 'react';
  * ()=>{} is a place holder of setter function
  * NOTE: createContext can take any type of data as an argument
  */
-const ThemeContext = createContext(["green", ()=>{}]);
+const ThemeContext = createContext<[string, (theme: string) => void]>(["green", ()=>{}]);
 
 export default ThemeContext;
