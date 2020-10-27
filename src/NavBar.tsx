@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Link } from "@reach/router";
 import { css, keyframes } from "@emotion/core";
 import color from "./color";
@@ -10,7 +10,7 @@ const spin = keyframes`
 `;
 
 
-const NavBar = () => { 
+const NavBar:FunctionComponent = () => { 
   return (
     <header
       css={css`

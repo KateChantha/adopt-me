@@ -1,10 +1,20 @@
 import React from "react";
+import { Photo } from "@frontendmasters/pet";
+
+interface IProps {
+  media: Photo[];
+}
+
+interface IState {
+  active: number;
+  photos: string[];
+}
 
 /**
  * @desc contains as array of various images
  * @desc Shows the active image by id number
  */
-class Carousel extends React.Component {
+class Carousel extends React.Component<IProps, IState> {
   state = {
     photos: [],
     active: 0, // by default, seclect 1st photo
@@ -12,7 +22,7 @@ class Carousel extends React.Component {
 
   // a React method, must be static, that take in a set of props and return a new set of state
   // accept media props from parent 
-  static getDerivedStateFromProps({ media }) {
+  static getDerivedStateFromProps({ media }: IProps) {
     // defaut pet photo
     let photos = ["http://placecorgi.com/600/600"];
 
@@ -26,12 +36,21 @@ class Carousel extends React.Component {
   }
 
   // property method syntax - use arrow function
-  handleIndexClick = event => {
-    this.setState({
+  handleIndexClick = (event: React.MouseEvent<HTMLElement>) => {
+
+    // typescript warning to handle if event.target.dataset.index is not an HTMLElement or undefined
+    // solution - handle if event.target.dataset.index is not an HTMLElement
+    if (!(event.target instanceof HTMLElement)) return;
+
+    // solution - handle if event.target.dataset.index is undefined(means no index pass in) - do nothing ** make sure that index exist
+    if (event.target.dataset.index) {
+      this.setState({
       // add + sign for coercion string to number
       // dataset is refered to <img data-index={index} />
-      active: +event.target.dataset.index
-    });
+        active: +event.target.dataset.index
+      });
+    }
+    
   }
 
   render() {

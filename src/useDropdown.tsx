@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, FunctionComponent, Dispatch } from "react";
 
 /**
  * @desc custom hook to create a dropdown component
  */
-const useDropdown = (label, defaultState, options) => {
+const useDropdown = (label: string, defaultState: string, options: string[]) => {
   const [state, setState] = useState(defaultState);
   // from label, take space out off string and make it lowercase
   const id = `use-dropdown-${label.replace(" ", "").toLowerCase()}`;
 
   // Generic dropdown component
-  const Dropdown = () => (
+  const Dropdown: FunctionComponent = () => (
     <label htmlFor={id}>
       {label}
       <select
@@ -29,7 +29,11 @@ const useDropdown = (label, defaultState, options) => {
     </label>
   );
 
-  return [state, Dropdown, setState];
+  return [state, Dropdown, setState] as [
+    string,
+    FunctionComponent,
+    Dispatch<string>
+  ];
 };
 
 export default useDropdown;

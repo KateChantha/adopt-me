@@ -1,6 +1,6 @@
 // reference from https://reactjs.org/docs/error-boundaries.html
 
-import React from "react";
+import React, { ErrorInfo } from "react";
 import {Link, Redirect} from "@reach/router";
 
 class ErrorBoundary extends React.Component {
@@ -11,7 +11,7 @@ class ErrorBoundary extends React.Component {
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: Error, info: ErrorInfo) {
     // can be sent off to log service such as Azure monitor, TrackJS or Sentry
     console.error("ErrorBoundary cought an error", error, info);
   }
@@ -27,7 +27,7 @@ class ErrorBoundary extends React.Component {
   render() {
     /** Redirect is a component from reach-router */
     if (this.state.redirect) {
-      return <Redirect to="/" noThrow />;
+      return <Redirect to="/" />;
     }
     if (this.state.hasError) {
       return (

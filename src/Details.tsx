@@ -1,22 +1,49 @@
 import React from "react";
-import pet from "@frontendmasters/pet";
-import { navigate } from "@reach/router";
+import pet, { Photo } from "@frontendmasters/pet";
+import { navigate, RouteComponentProps } from "@reach/router";
 import Modal from "./Modal";
 import Carousel from "./Carousel";
 import ErrorBoundary from './ErrorBoundary';
 import ThemeContext from "./ThemeContext";
 
 
-class Details extends React.Component {
+class Details extends React.Component<RouteComponentProps<{ id: string }>> {
+  
+  /**
+   * solution - give state all initail default values
+   */
   // react syntax "classProperties"
-  state = { loading: true, showModal: false };
+  state = { 
+    loading: true, 
+    showModal: false,
+    name: "",
+    animal: "",
+    location: "",
+    description: "",
+    media: [] as Photo[], // prevent typescript from never[]
+    url: "",
+    breed: ""
+  };
 
   componentDidMount() {
+    /**
+     * Typescript - this.props.id: Type 'undefined' is not assignable
+     * solution - handle if this.props.id is undefined
+     */
+    if (!this.props.id) {
+      navigate("/");
+      return;
+    }
+
     // get id as a props from path="/details/:id"
     // make AJAX call to petfinder API
     // arrow function will not create a new context, so this will refer to 
-    pet.animal(this.props.id).then(({ animal }) => {
-      //setState does do a shallow merge
+    /**
+     * Typescript - this.props.id: Argument of type 'string' is not assignable to parameter of type 'number'
+     * solution - add plus sign to corecion string to number
+     */
+    pet.animal(+this.props.id).then(({ animal }) => {
+      // setState does do a shallow merge
       this.setState({
         url: animal.url,
         name: animal.name,
@@ -27,11 +54,17 @@ class Details extends React.Component {
         breed: animal.breeds.primary,
         loading: false,
       });
-    }, console.error);
+    })
+    .catch((err: Error) => this.setState({ error: err }));
   }
 
   // react syntax "classProperties"
   toggleModal = () => this.setState({showModal: !this.state.showModal});
+  /**
+   * Typescript - this.state.url: Property 'url' does not exist on type 
+   * solution - 1st sol. define type for state at component parameters (at the component parameter, the 1st param is props and 2nd param is state)
+   * solution - 2nd sol. give state all initail default values
+   */
   // this can be handle by Redirect component as well
   adopt = () => navigate(this.state.url); 
 
@@ -76,7 +109,7 @@ class Details extends React.Component {
 }
 
 // HOC wrapper
-export default function DetailsWithErrorBoundary(props) {
+export default function DetailsWithErrorBoundary(props: RouteComponentProps<{ id: string }>) {
   return (
     <ErrorBoundary>
       <Details {...props} />
