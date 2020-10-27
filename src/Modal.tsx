@@ -36,7 +36,7 @@ const Modal: FunctionComponent = ({ children }) => {
     const modalRoot = document.getElementById("modal");
     modalRoot.appendChild(elRef.current);
 
-  // Typescript Error:Type '(() => HTMLDivElement) | undefined' is not assignable to type 'void | (() => void | undefined)' 
+  // Typescript Error:Type '(() => HTMLDivElement) | undefined' is not assignable to type 'void | (() => void | undefined)' //
     return () => modalRoot.removeChild(elRef.current);
   },[]);
    */
