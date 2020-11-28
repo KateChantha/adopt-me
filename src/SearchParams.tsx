@@ -8,9 +8,9 @@ import ThemeContext from "./ThemeContext";
 const SearchParams: FunctionComponent<RouteComponentProps> = () => {
   const [location, setLocation] = useState("Seattle, WA");
   const [breeds, setBreeds] = useState([] as string[]);
-  const [animal, AnimalDropdown] = useDropdown("Animal", "All", ANIMALS);
+  const [animal, AnimalDropdown] = useDropdown("Animal", "-- Types of Pets --", ANIMALS);
   // Custom hook - useDropdown() will return [state, Dropdown, setState]
-  const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
+  const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "Any", breeds);
   const [pets, setPets] = useState([] as Animal[]);
   const [theme, setTheme] = useContext(ThemeContext)
 
@@ -50,13 +50,15 @@ const SearchParams: FunctionComponent<RouteComponentProps> = () => {
         }}
       >
         <label htmlFor="location">
-          location
-          <input
-            id="location"
+          Location:
+          <select
             value={location}
-            placeholder="Location"
-            onChange={(e) => setLocation(e.target.value)}
-          />
+            onChange={e => setLocation(e.target.value)}
+            onBlur={e => setLocation(e.target.value)}
+          >
+            <option>Seattle, WA</option>
+            <option>San Francisco, CA</option>
+          </select>
         </label>
 
         <AnimalDropdown />
@@ -76,7 +78,7 @@ const SearchParams: FunctionComponent<RouteComponentProps> = () => {
           </select>
         </label>
 
-        <button style={{ backgroundColor: theme }} >Submit</button>
+        <button style={{ backgroundColor: theme }} >Search</button>
       </form>
       <Results pets={pets} />
     </div>
