@@ -246,6 +246,35 @@ header {
   margin-right: 15px;
 }
 
+/* Theme Container*/
+[type="radio"] {
+  display: none;
+}
+.theme-container {
+  display: flex;
+}
+
+#peru + label {
+  background: #f2921b;
+}
+
+#darkblue + label {
+  background: #4ebcff;
+}
+
+.theme-container label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+[type="radio"]:checked + label {
+  box-shadow: 0 0 0 2px #f9f9f9, 0 0 0 3px var(--text-color);
+}
+
 @media only screen and (max-width: 1129px) {
   header {
     display: flex;
