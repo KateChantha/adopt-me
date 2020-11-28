@@ -78,15 +78,16 @@ class Details extends React.Component<RouteComponentProps<{ id: string }>> {
       <div className="details">
         <Carousel media={media} />
         <div>
-          <h1>{name}</h1>
-          <h2>{`${animal} - ${breed} - ${location}`}</h2>
+          <h1>{`My name is ${name}!`}</h1>
+          <h2>{`Breed: ${animal} - ${breed}`}</h2>
+          <h2>{`From: ${location}`}</h2>
           <ThemeContext.Consumer>
             {([theme]) => (
               <button 
               style={{ backgroundColor: theme }}
               onClick={this.toggleModal} 
               >
-                Adopt {name}
+                More About {name}
               </button>
             )}
           </ThemeContext.Consumer>
@@ -96,8 +97,8 @@ class Details extends React.Component<RouteComponentProps<{ id: string }>> {
                 <div>
                   <h1>Would you like to adopt {name} ?</h1>
                   <div className="buttons">
-                    <button onClick={this.adopt} >Yes</button>
-                    <button onClick={this.toggleModal} >No, I am monster</button>
+                    <button onClick={this.adopt} >Yes, Go to Petfinder</button>
+          <button onClick={this.toggleModal} >Back to {name}'s Profile</button>
                   </div>
                 </div>
               </Modal>
