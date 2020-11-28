@@ -1,13 +1,20 @@
+:root {
+  --canvasColor: #c7e6e2;
+  --main-color: #f4f5d9;
+  --text-color-tiltle: #38bfa7;
+  --text-color: rgb(33, 70, 54);
+}
+
 * {
   box-sizing: border-box;
-  color: #333;
+  color: var(--text-color);
 }
 
 body {
-  background-color: #81a69b;
+  background-color: var(--canvasColor);
   background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-background.png);
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search-params {
@@ -16,7 +23,8 @@ body {
 }
 
 .search-params form {
-  background-color: #d9c148;
+  /* background-color: #d9c148; */
+  background-color: var(--main-color);
   width: 360px;
   margin: 0px 25px 0px 0px;
   padding: 35px 15px 15px 15px;
@@ -25,7 +33,7 @@ body {
 }
 
 .search {
-  background-color: #d9c148;
+  background-color: var(--main-color);
   width: 715px;
   padding: 15px;
   border-radius: 9px;
@@ -36,7 +44,7 @@ body {
 .details {
   width: 1100px;
   margin: 0 auto;
-  background-color: #d9c148;
+  background-color: var(--main-color);
   padding: 15px;
   border-radius: 9px;
   margin-bottom: 25px;
@@ -48,7 +56,7 @@ body {
   display: block;
   overflow: hidden;
   margin: 25px 0;
-  border-bottom: #bf9b2f 1px solid;
+  border-bottom: var(--text-color) 1px solid;
 }
 
 .pet img {
@@ -75,9 +83,9 @@ body {
 
 .pet h1 {
   white-space: nowrap;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 30px;
-  color: #bf3334;
+  color: var(--text-color);
   width: 95%;
   overflow: hidden;
   margin: 0;
@@ -127,7 +135,7 @@ header {
 
 .details h1 {
   text-align: center;
-  color: #bf3334;
+  color: var(--text-color-tiltle);
   font-size: 60px;
   margin: 5px 0px;
 }
