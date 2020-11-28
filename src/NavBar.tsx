@@ -19,19 +19,6 @@ const NavBar:FunctionComponent = () => {
       `}
     >
       <Link to="/">Adopt Me!</Link>
-      <span 
-        role="img" 
-        aria-label="logo"
-        css={css`
-        font-size: 4rem;
-
-        &:hover {
-          text-decoration: underline;
-          display: inline-block;
-          animation: 1s ${spin} linear infinite;
-        }
-        `}
-      >🐥</span>
     </header>
   );
 } 
