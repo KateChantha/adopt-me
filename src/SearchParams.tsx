@@ -50,7 +50,7 @@ const SearchParams: FunctionComponent<RouteComponentProps> = () => {
         }}
       >
         <label htmlFor="location">
-          Location:
+          Location
           <select
             value={location}
             onChange={e => setLocation(e.target.value)}
