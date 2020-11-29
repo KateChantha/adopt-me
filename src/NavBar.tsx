@@ -31,17 +31,20 @@ const NavBar:FunctionComponent = () => {
   return (
     <div className="nav-container">
       <header
-      css={css`
-        background-color: ${color.dark};
-        padding: 1rem;
-      `}
+      // css={css`
+      //   background-color: ${color.dark};
+      //   padding: 1rem;
+      // `}
       >
         <Link to="/">Adopt Me!</Link>
       </header>
 
       <div className="theme-container">
           {displayThemeButtons} 
-        </div>
+      </div>
+      <h3>
+      Helping death-row, abused, and neglected pets find forever homes. 
+      </h3>
     </div>
   );
 } 

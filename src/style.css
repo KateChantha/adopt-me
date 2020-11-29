@@ -2,7 +2,8 @@
   --canvasColor: #c7e6e2;
   --main-color: #f4f5d9;
   --text-color-tiltle: #38bfa7;
-  --text-color: rgb(33, 70, 54);
+  /* --text-color: rgb(33, 70, 54); */
+  --text-color: #206466;
 }
 
 * {
@@ -14,7 +15,7 @@ body {
   background-color: var(--canvasColor);
   background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-background.png);
   margin: 0;
-  font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .search-params {
@@ -115,8 +116,8 @@ header > a,
 
 /* NAV BAR */
 header a {
-  color: #bf3334;
-  font-size: 3px;
+  /* color: #bf3334; */
+  /* font-size: 3px; */
   text-decoration: none;
   font-weight: bold;
   display: block;
@@ -124,16 +125,17 @@ header a {
 }
 
 header {
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-  width: 1100px;
+  /* display: flex; */
+  /* align-content: center; */
+  /* justify-content: space-between; */
+  /* width: 1100px; */
   margin: 0 auto;
   padding: 20px 0px 0px 0px;
 }
 
 .nav-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 1rem;
 }
@@ -197,19 +199,24 @@ header {
 .search-params input,
 .search-params select {
   margin-bottom: 30px;
-  font-size: 18px;
-  height: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 45px;
   width: 325px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-color: #c9d734;
 }
 
 .search-params button,
 #modal button,
 .details button {
   background-color: #ad343e;
-  padding: 5px 25px;
+  padding: 6px 25px;
   color: white;
-  font-size: 18px;
-  border: #333 1px solid;
+  font-size: 14px;
+  font-weight: 600;
+  border: #333 0px solid;
   border-radius: 5px;
   display: block;
   margin: 0 auto;
@@ -295,15 +302,15 @@ header {
 }
 
 [type="radio"]:checked + label {
-  box-shadow: 0 0 0 2px #f9f9f9, 0 0 0 3px var(--text-color);
+  box-shadow: 0 0 0 2px #f9f9f9, 0 0 0 4px var(--text-color);
 }
 
 @media only screen and (max-width: 1129px) {
   header {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    width: 95%;
+    /* display: flex; */
+    /* align-content: center; */
+    /* justify-content: space-between; */
+    /* width: 95%; */
     margin: 0 auto;
     padding: 20px 0px 0px 0px;
   }
