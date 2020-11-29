@@ -1,6 +1,7 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useContext } from "react";
 import { Photo } from "@frontendmasters/pet";
 import { Link } from "@reach/router"
+import ThemeContext from "./ThemeContext";
 
 interface IProps {
   name: string;
@@ -12,6 +13,7 @@ interface IProps {
 }
 
 const Pet: FunctionComponent<IProps> = props => {
+  const [theme] = useContext(ThemeContext);
   const { name, animal, breed, media, location, id } = props
   let hero = "http://placecorgi.com/300/300";
   if (media.length) {
@@ -25,7 +27,7 @@ const Pet: FunctionComponent<IProps> = props => {
         <img src={hero} alt={name} />
       </div>
       <div className="info">
-        <h1>{name}</h1>
+        <h1 style={{ color: theme }}>{name}</h1>
         <h2>{`${animal} - ${breed} - ${location}`}</h2>
       </div>
     </Link>

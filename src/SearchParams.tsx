@@ -12,7 +12,7 @@ const SearchParams: FunctionComponent<RouteComponentProps> = () => {
   // Custom hook - useDropdown() will return [state, Dropdown, setState]
   const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "Any", breeds);
   const [pets, setPets] = useState([] as Animal[]);
-  const [theme, setTheme] = useContext(ThemeContext)
+  const [theme] = useContext(ThemeContext)
 
   // requestPets() is called onSubmitt by <form>
   async function requestPets() {

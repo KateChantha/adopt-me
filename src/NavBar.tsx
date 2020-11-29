@@ -40,30 +40,9 @@ const NavBar:FunctionComponent = () => {
       </header>
 
       <div className="theme-container">
-          {/* <input 
-            id="peru"
-            type="radio"
-            name="theme-color"
-            value="peru"
-            checked={theme === "peru"}
-            onChange={e => setTheme(e.target.value)}
-          />
-          <label htmlFor="peru" />
-          <input 
-            id="darkblue"
-            type="radio"
-            name="theme-color"
-            value="darkblue"
-            checked={theme === "darkblue"}
-            onChange={e => setTheme(e.target.value)}
-          /> */}
-          {displayThemeButtons}
-          <label htmlFor="darkblue" />
+          {displayThemeButtons} 
         </div>
     </div>
-    
-
-    
   );
 } 
 
