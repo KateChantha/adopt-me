@@ -13,9 +13,23 @@ const spin = keyframes`
 
 const NavBar:FunctionComponent = () => { 
   const [theme, setTheme] = useContext(ThemeContext);
-
+  const themeColors:string[] = ["teal", "tomato", "palevioletred", "deepskyblue"];
+  const displayThemeButtons = themeColors.map(color=> (
+    <div key={color}>
+       <input 
+            id={color}
+            type="radio"
+            name="theme-color"
+            value={color}
+            checked={theme === color}
+            onChange={e => setTheme(e.target.value)}
+      />
+      <label htmlFor={color} />
+    </div>
+  ))
+    
   return (
-    <div>
+    <div className="nav-container">
       <header
       css={css`
         background-color: ${color.dark};
@@ -26,7 +40,7 @@ const NavBar:FunctionComponent = () => {
       </header>
 
       <div className="theme-container">
-          <input 
+          {/* <input 
             id="peru"
             type="radio"
             name="theme-color"
@@ -42,7 +56,8 @@ const NavBar:FunctionComponent = () => {
             value="darkblue"
             checked={theme === "darkblue"}
             onChange={e => setTheme(e.target.value)}
-          />
+          /> */}
+          {displayThemeButtons}
           <label htmlFor="darkblue" />
         </div>
     </div>

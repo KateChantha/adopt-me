@@ -110,6 +110,7 @@ header > a,
   text-overflow: ellipsis;
 }
 
+/* NAV BAR */
 header a {
   color: #bf3334;
   font-size: 3px;
@@ -127,6 +128,13 @@ header {
   margin: 0 auto;
   padding: 20px 0px 0px 0px;
 }
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+/* DETIAL PAGE */
 
 .details p {
   line-height: 1.5;
@@ -254,12 +262,20 @@ header {
   display: flex;
 }
 
-#peru + label {
-  background: #f2921b;
+#deepskyblue + label {
+  background: deepskyblue;
 }
 
-#darkblue + label {
-  background: #4ebcff;
+#teal + label {
+  background: teal;
+}
+
+#tomato + label {
+  background: tomato;
+}
+
+#palevioletred + label {
+  background: palevioletred;
 }
 
 .theme-container label {

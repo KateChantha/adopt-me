@@ -64,41 +64,6 @@ const SearchParams: FunctionComponent<RouteComponentProps> = () => {
         <AnimalDropdown />
         <BreedDropdown />
 
-        {/* <label htmlFor="theme" >
-          ThemeContext
-          <select
-            value={theme}
-            onChange={ e => setTheme(e.target.value)}
-            onBlur={ e => setTheme(e.target.value)}
-          >
-            <option value="peru">Peru</option>
-            <option value="darkblue">Dark Blue</option>
-            <option value="mediumorchid">Medium Orchid</option>
-            <option value="chartreuse">Chartreuse</option>
-          </select>
-        </label> */}
-        {/* <div className="theme-container">
-          <input 
-            id="peru"
-            type="radio"
-            name="theme-color"
-            value="peru"
-            checked={theme === "peru"}
-            onChange={e => setTheme(e.target.value)}
-          />
-          <label htmlFor="peru" />
-          <input 
-            id="darkblue"
-            type="radio"
-            name="theme-color"
-            value="darkblue"
-            checked={theme === "darkblue"}
-            onChange={e => setTheme(e.target.value)}
-          />
-          <label htmlFor="darkblue" />
-        </div> */}
-        
-
         <button style={{ backgroundColor: theme }} >Search</button>
       </form>
       <Results pets={pets} />
