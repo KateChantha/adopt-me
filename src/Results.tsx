@@ -1,17 +1,19 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useContext } from "react";
 import { Animal } from "@frontendmasters/pet";
 import Pet from "./Pet";
+import ThemeContext from "./ThemeContext";
 
 interface IProps {
   pets: Animal[];
 }
 
 const Results: FunctionComponent<IProps> = ({ pets }) => {
+  const [theme] = useContext(ThemeContext)
   // console.log("PETS", pets);
   return (
     <div className="search">
       {!pets.length ? (
-        <h1>No Pets Found</h1>
+        <h1 style={{ color: theme }}>No Pets Found</h1>
       ) : (
         pets.map((pet) => (
           <Pet
