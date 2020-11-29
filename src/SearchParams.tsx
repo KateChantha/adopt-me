@@ -12,7 +12,7 @@ const SearchParams: FunctionComponent<RouteComponentProps> = () => {
   // Custom hook - useDropdown() will return [state, Dropdown, setState]
   const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "Any", breeds);
   const [pets, setPets] = useState([] as Animal[]);
-  const [theme, setTheme] = useContext(ThemeContext)
+  const [theme] = useContext(ThemeContext)
 
   // requestPets() is called onSubmitt by <form>
   async function requestPets() {
@@ -63,20 +63,6 @@ const SearchParams: FunctionComponent<RouteComponentProps> = () => {
 
         <AnimalDropdown />
         <BreedDropdown />
-
-        <label htmlFor="theme" >
-          ThemeContext
-          <select
-            value={theme}
-            onChange={ e => setTheme(e.target.value)}
-            onBlur={ e => setTheme(e.target.value)}
-          >
-            <option value="peru">Peru</option>
-            <option value="darkblue">Dark Blue</option>
-            <option value="mediumorchid">Medium Orchid</option>
-            <option value="chartreuse">Chartreuse</option>
-          </select>
-        </label>
 
         <button style={{ backgroundColor: theme }} >Search</button>
       </form>
