@@ -1,5 +1,6 @@
 {
   "name": "Adopt-Me",
+  "homepage": "https://katechantha.github.io/adopt-me/"
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +9,9 @@
     "format": "prettier \"src/**/*.{js,css,html}\" --write",
     "lint": "tslint --project .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "keywords": [],
   "author": "Kate C",
@@ -21,6 +24,7 @@
     "@types/reach__router": "^1.3.6",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.1.2",
     "tslint": "^6.1.3",
