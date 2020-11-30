@@ -279,16 +279,16 @@ header {
   display: flex;
 }
 
-#deepskyblue + label {
-  background: deepskyblue;
+#steelblue + label {
+  background: steelblue;
 }
 
 #teal + label {
   background: teal;
 }
 
-#tomato + label {
-  background: tomato;
+#salmon + label {
+  background: salmon;
 }
 
 #palevioletred + label {

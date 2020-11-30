@@ -13,7 +13,7 @@ const spin = keyframes`
 
 const NavBar:FunctionComponent = () => { 
   const [theme, setTheme] = useContext(ThemeContext);
-  const themeColors:string[] = ["teal", "tomato", "palevioletred", "deepskyblue"];
+  const themeColors:string[] = ["teal", "salmon", "palevioletred", "steelblue"];
   const displayThemeButtons = themeColors.map(color=> (
     <div key={color}>
        <input 
