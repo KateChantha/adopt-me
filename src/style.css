@@ -86,8 +86,8 @@ body {
 
 .pet h1 {
   white-space: nowrap;
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 1.5rem;
   color: var(--text-color);
   width: 95%;
   overflow: hidden;
@@ -111,7 +111,7 @@ header > a,
 .pet h2 {
   white-space: nowrap;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 1rem;
   margin: 0;
   text-overflow: ellipsis;
 }
