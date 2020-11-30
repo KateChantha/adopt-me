@@ -98,10 +98,12 @@ body {
 header > a,
 #root > div > h1 {
   display: inline-block;
-  background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-logo.png);
+  background-image: url(./images/AdoptMe.png);
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
   width: 19rem;
-  height: 7rem;
+  height: 11rem;
   overflow: hidden;
   text-indent: -9999px;
 }
@@ -116,8 +118,6 @@ header > a,
 
 /* NAV BAR */
 header a {
-  /* color: #bf3334; */
-  /* font-size: 3px; */
   text-decoration: none;
   font-weight: bold;
   display: block;
@@ -125,12 +125,7 @@ header a {
 }
 
 header {
-  /* display: flex; */
-  /* align-content: center; */
-  /* justify-content: space-between; */
-  /* width: 1100px; */
   margin: 0 auto;
-  padding: 20px 0px 0px 0px;
 }
 
 .nav-container {
@@ -138,6 +133,16 @@ header {
   flex-direction: column;
   align-items: center;
   margin: 1rem;
+}
+
+.nav-container h3 {
+  font-weight: 500;
+  color: #fff;
+}
+
+.header-banner {
+  text-align: center;
+  width: 100%;
 }
 
 /* DETIAL PAGE */
@@ -307,12 +312,7 @@ header {
 
 @media only screen and (max-width: 1129px) {
   header {
-    /* display: flex; */
-    /* align-content: center; */
-    /* justify-content: space-between; */
-    /* width: 95%; */
     margin: 0 auto;
-    padding: 20px 0px 0px 0px;
   }
 
   .search-params {
