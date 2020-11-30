@@ -13,7 +13,7 @@ const spin = keyframes`
 
 const NavBar:FunctionComponent = () => { 
   const [theme, setTheme] = useContext(ThemeContext);
-  const themeColors:string[] = ["teal", "tomato", "palevioletred", "deepskyblue"];
+  const themeColors:string[] = ["teal", "salmon", "palevioletred", "steelblue"];
   const displayThemeButtons = themeColors.map(color=> (
     <div key={color}>
        <input 
@@ -42,9 +42,11 @@ const NavBar:FunctionComponent = () => {
       <div className="theme-container">
           {displayThemeButtons} 
       </div>
-      <h3>
-      Helping death-row, abused, and neglected pets find forever homes. 
-      </h3>
+      <div className="header-banner" style={{ backgroundColor: theme }}>
+        <h3>
+        Adopt a pet. Save a life. Helping them find forever homes. 
+        </h3>
+      </div>
     </div>
   );
 } 
