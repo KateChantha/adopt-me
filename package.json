@@ -10,6 +10,7 @@
     "lint": "tslint --project .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck": "tsc --noEmit",
+    "build": "parcel build src/index.html --out-dir ./build",
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build"
   },
