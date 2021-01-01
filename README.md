@@ -1,0 +1,1 @@
+## Adopt Me is a pet adoption platform that I’ve been interested in getting involved with as a side project. It’s built with React and Typscript and powered by Pet-finder API. I took the initial concept from Frontend Masters workshop and added my own spin.
